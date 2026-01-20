@@ -1,21 +1,37 @@
-Assignments & Study Tracker
+ # Assignments & Study Tracker 
 
-A lightweight frontend app for tracking assignments, timetables, badges and gamification features.
+Assignment & Study Tracker is a lightweight frontend web app for managing assignments, timetables, badges, and gamification features to make studying more organized and fun.
 
-- Files: core pages under the project root (index.html, script.js, style.css, sw.js)
-- UI assets: css/ and js/ folders contain modular styles and scripts for pages
-- Pages: pages/ contains per-page HTML (login, signup, profile, timetable, badges, gamification)
+# Features
 
-Quick start
-- Open index.html in a browser (no build step required).
+Assignments & Timetables: Track all your tasks and daily schedule in one place.
 
-Dark theme search-bar fix
-- Fixed an issue where search input text became unreadable in dark mode by:
-  - Setting `--text-light` to the light text value in dark mode (`--text-dark`).
-  - Making the `.search-bar` background use `--card-light` so it follows the current theme.
+Gamification & Badges: Earn badges and rewards to motivate your progress.
 
-If you'd like, I can also:
-- Add a theme toggle persistence (localStorage)
-- Improve contrast for specific components
+Dark & Light Themes: Works seamlessly in both themes.
 
-Enjoy — tell me if you want the README extended with usage or contributor notes.
+Responsive UI: Modular styles for easy customization.
+
+# Quick Start
+
+Clone or download the repository.
+
+Open index.html in your browser — no build step required.
+
+Dark Theme Fixes
+
+Fixed unreadable search input text in dark mode by:
+
+Setting --text-light to a light text color when in dark mode.
+
+Using --card-light as the background for .search-bar to follow the theme.
+
+# Contributing
+
+Contributions are welcome! You can help by:
+
+Adding new features (like reminders, notifications).
+
+Improving UI/UX or accessibility.
+
+Fixing bugs and improving code structure.
