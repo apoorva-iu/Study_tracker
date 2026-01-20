@@ -1,4 +1,4 @@
-# AST (Assignments & Study Tracker)
+Assignments & Study Tracker
 
 A lightweight frontend app for tracking assignments, timetables, badges and gamification features.
 
