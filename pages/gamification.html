@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamification - Student Assignment Manager</title>
+    <link rel="stylesheet" href="../css/gamification.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <a href="javascript:history.back()" class="back-btn">← Back</a>
+            <h1>🎮 Gamification</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="gamification-wrapper">
+            <div class="stats-panel">
+                <div class="stat-box xp-box">
+                    <div class="stat-label">Total XP</div>
+                    <div class="stat-value" id="totalXP">0</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="xpFill"></div>
+                    </div>
+                    <div class="progress-label"><span id="xpPercent">0</span>% to next level</div>
+                </div>
+
+                <div class="stat-box level-box">
+                    <div class="stat-label">Level</div>
+                    <div class="stat-value" id="currentLevel">1</div>
+                    <div class="level-title" id="levelTitle">Beginner</div>
+                </div>
+
+                <div class="stat-box streak-box">
+                    <div class="stat-label">Weekly Streak 🔥</div>
+                    <div class="stat-value" id="weeklyStreak">0</div>
+                    <div class="streak-info">days in a row</div>
+                </div>
+            </div>
+
+            <div class="badges-section">
+                <h2>Badges Earned</h2>
+                <div class="badges-grid" id="badgesGrid">
+                    <div class="badge-slot" id="badge-template">
+                        <div class="badge-icon">🏆</div>
+                        <div class="badge-name">Unknown</div>
+                    </div>
+                </div>
+                <div id="noBadgesMsg" class="no-badges">No badges earned yet. Keep working!</div>
+            </div>
+
+            <div class="leaderboard-section">
+                <h2>XP Breakdown</h2>
+                <div class="breakdown-stats">
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Assignments Completed</span>
+                        <span class="breakdown-value" id="completedCount">0</span>
+                        <span class="breakdown-points">+<span id="completedPoints">0</span> XP</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">On-Time Submissions</span>
+                        <span class="breakdown-value" id="onTimeCount">0</span>
+                        <span class="breakdown-points">+<span id="onTimePoints">0</span> XP</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Early Submissions</span>
+                        <span class="breakdown-value" id="earlyCount">0</span>
+                        <span class="breakdown-points">+<span id="earlyPoints">0</span> XP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h2>Achievement Levels</h2>
+                <div class="levels-list">
+                    <div class="level-item">
+                        <div class="level-name">🌱 Novice</div>
+                        <div class="level-range">0-100 XP</div>
+                    </div>
+                    <div class="level-item">
+                        <div class="level-name">📚 Student</div>
+                        <div class="level-range">101-300 XP</div>
+                    </div>
+                    <div class="level-item">
+                        <div class="level-name">🎓 Scholar</div>
+                        <div class="level-range">301-600 XP</div>
+                    </div>
+                    <div class="level-item">
+                        <div class="level-name">🏅 Master</div>
+                        <div class="level-range">601-1000 XP</div>
+                    </div>
+                    <div class="level-item">
+                        <div class="level-name">👑 Legend</div>
+                        <div class="level-range">1000+ XP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/gamification.js"></script>
+</body>
+</html>

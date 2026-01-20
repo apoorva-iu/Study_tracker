@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Assignment Deadline Tracker for Students">
+    <meta name="theme-color" content="#4b5bff">
+    <title >Dashboard - Student Assignment Manager</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234b5bff' width='192' height='192'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='100' fill='white' font-weight='bold'>A</text></svg>">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+<h1 style="text-align:center; font-family: Arial, sans-serif; color: #2c3e50; margin-top: 20px;">
+  📚 Student Assignment Manager
+</h1>
+            <div class="header-controls">
+                <div class="user-info">
+                    <span id="userName">User</span>
+                    <a href="./pages/profile.html" class="profile-link">👤 Profile</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+                <button class="notification-btn" id="notificationBtn" title="Enable Notifications">🔔</button>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search by subject...">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="navigation-section">
+                    <h2>Quick Links</h2>
+                    <nav class="nav-menu">
+                        <a href="./pages/gamification.html" class="nav-link">🎮 Gamification</a>
+                        <a href="./pages/timetable.html" class="nav-link">📅 Timetable</a>
+                        <a href="./pages/badges.html" class="nav-link">🏆 Badges</a>
+                    </nav>
+                </div>
+
+                <div class="input-section">
+                    <h2>Add New Assignment</h2>
+                    <div class="input-group">
+                        <input type="text" id="subject" placeholder="Subject Name" maxlength="50">
+                        <input type="date" id="deadline">
+                        <select id="priority">
+                            <option value="high">🔴 High Priority</option>
+                            <option value="medium">🟠 Medium Priority</option>
+                            <option value="low">🟢 Low Priority</option>
+                        </select>
+                        <select id="category">
+                            <option value="homework">📝 Homework</option>
+                            <option value="project">💻 Project</option>
+                            <option value="lab">🧪 Lab</option>
+                            <option value="exam">📖 Exam Prep</option>
+                            <option value="other">📌 Other</option>
+                        </select>
+                        <textarea id="notes" placeholder="Add notes or links..." maxlength="200"></textarea>
+                        <button id="addBtn" class="btn-primary">+ Add Assignment</button>
+                    </div>
+                </div>
+
+                <div class="analytics-section">
+                    <h2>📊 Quick Stats</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalCount">0</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="completedCount">0</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="overdueCount">0</div>
+                            <div class="stat-label">Overdue</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="upcomingCount">0</div>
+                            <div class="stat-label">Upcoming</div>
+                        </div>
+                    </div>
+                    <div class="progress-section">
+                        <label>Progress: <span id="progressPercent">0</span>%</label>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                    <button class="filter-btn" data-filter="overdue">Overdue</button>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="deadline">Sort by Deadline</option>
+                        <option value="priority">Sort by Priority</option>
+                        <option value="category">Sort by Category</option>
+                    </select>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="assignments">📋 Assignments</button>
+                    <button class="tab-btn" data-tab="analytics">📈 Analytics</button>
+                </div>
+
+                <div class="tab-content" id="assignmentsTab">
+                    <div id="assignmentList" class="assignment-list"></div>
+                    <div class="empty-state" id="emptyState">
+                        <p>✨ No assignments yet. Add one to get started!</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="analyticsTab" style="display:none;">
+                    <div class="analytics-dashboard">
+                        <div class="chart-container">
+                            <h3>Completed vs Pending</h3>
+                            <canvas id="completionChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Priority Distribution</h3>
+                            <canvas id="priorityChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Category Breakdown</h3>
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Workload Timeline</h3>
+                            <canvas id="timelineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/auth.js"></script>
+    <script>checkAuthentication();</script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

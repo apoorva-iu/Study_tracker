@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Student Assignment Manager</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <a href="javascript:history.back()" class="back-btn">← Back to Dashboard</a>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="profile-wrapper">
+            <div class="profile-card">
+                <h1>👤 Profile Settings</h1>
+
+                <div class="profile-picture-section">
+                    <img id="profilePicture" src="" alt="Profile Picture" class="profile-pic">
+                    <label for="picInput" class="upload-label">📷 Change Picture</label>
+                    <input type="file" id="picInput" accept="image/*" style="display:none;">
+                </div>
+
+                <form id="profileForm" class="profile-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="fullName" placeholder="Your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="emailInput" placeholder="your@email.com" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" id="currentPassword" placeholder="Enter current password">
+                    </div>
+
+                    <div class="form-group">
+                        <label>New Password (leave blank to keep current)</label>
+                        <input type="password" id="newPassword" placeholder="New password">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <input type="password" id="confirmNewPassword" placeholder="Confirm new password">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Save Changes</button>
+                </form>
+
+                <div class="progress-summary">
+                    <h3>📊 Progress Summary</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <span class="summary-label">Total XP</span>
+                            <span class="summary-value" id="profileXP">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Level</span>
+                            <span class="summary-value" id="profileLevel">1</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Badges</span>
+                            <span class="summary-value" id="profileBadges">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="logoutBtn" class="btn-logout">🚪 Logout</button>
+
+                <div id="successMessage" class="success-message"></div>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

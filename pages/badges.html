@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badges - Student Assignment Manager</title>
+    <link rel="stylesheet" href="../css/badges.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <a href="javascript:history.back()" class="back-btn">← Back</a>
+            <h1>🏆 Achievement Badges</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="badges-wrapper">
+            <div class="badges-stats">
+                <div class="stat-card">
+                    <div class="stat-label">Total Badges</div>
+                    <div class="stat-value" id="totalBadges">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Completion %</div>
+                    <div class="stat-value" id="completionPercent">0%</div>
+                </div>
+            </div>
+
+            <div class="badges-section">
+                <h2>Earned Badges</h2>
+                <div class="badges-grid" id="earnedBadges">
+                    <div class="empty-state">No badges earned yet. Start completing assignments!</div>
+                </div>
+            </div>
+
+            <div class="badges-section">
+                <h2>Available Badges</h2>
+                <div class="badges-grid" id="allBadges">
+                    <!-- Badge definitions will be loaded here -->
+                </div>
+            </div>
+
+            <div class="badge-descriptions">
+                <h3>Badge Descriptions</h3>
+                <div class="descriptions-list">
+                    <div class="description-item">
+                        <div class="description-icon">⚔️</div>
+                        <div class="description-content">
+                            <h4>Deadline Warrior</h4>
+                            <p>Complete 10 assignments to earn this badge. Demonstrates commitment and consistency.</p>
+                        </div>
+                    </div>
+                    <div class="description-item">
+                        <div class="description-icon">🌅</div>
+                        <div class="description-content">
+                            <h4>Early Bird</h4>
+                            <p>Submit 5 assignments before their deadlines. Shows excellent time management.</p>
+                        </div>
+                    </div>
+                    <div class="description-item">
+                        <div class="description-icon">👑</div>
+                        <div class="description-content">
+                            <h4>Consistency King/Queen</h4>
+                            <p>Maintain a 7-day weekly streak of completing assignments. Proves discipline!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/badges.js"></script>
+</body>
+</html>

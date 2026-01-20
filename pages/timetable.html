@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Generator - Student Assignment Manager</title>
+    <link rel="stylesheet" href="../css/timetable.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <a href="javascript:history.back()" class="back-btn">← Back</a>
+            <h1>📅 Timetable Generator</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="timetable-wrapper">
+            <div class="setup-panel">
+                <div class="setup-card">
+                    <h2>Setup Your Schedule</h2>
+                    
+                    <div class="setup-section">
+                        <h3>📚 Add Class/Study Sessions</h3>
+                        <div class="input-group">
+                            <input type="text" id="className" placeholder="Subject/Class Name">
+                            <select id="daySelect">
+                                <option value="">Select Day</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </select>
+                            <input type="time" id="startTime">
+                            <input type="time" id="endTime">
+                            <button id="addSessionBtn" class="btn-primary">+ Add Session</button>
+                        </div>
+                    </div>
+
+                    <div class="setup-section">
+                        <h3>⏰ Daily Availability</h3>
+                        <div class="availability-group">
+                            <label>
+                                <input type="time" id="studyStartTime" value="09:00">
+                                <span>Available from</span>
+                            </label>
+                            <label>
+                                <input type="time" id="studyEndTime" value="21:00">
+                                <span>Available until</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setup-section">
+                        <h3>⚙️ Preferences</h3>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoGenerate" checked>
+                            <span>Auto-generate study schedule for pending assignments</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="balanceLoad" checked>
+                            <span>Balance study load across days</span>
+                        </label>
+                    </div>
+
+                    <button id="generateBtn" class="btn-generate">Generate Timetable</button>
+                </div>
+            </div>
+
+            <div class="timetable-display">
+                <div class="timetable-header">
+                    <h2>Weekly Schedule</h2>
+                    <button id="downloadBtn" class="btn-download">📥 Download as PDF</button>
+                </div>
+
+                <div class="schedule-grid" id="scheduleGrid">
+                    <!-- Will be filled with schedule -->
+                </div>
+
+                <div id="noTimetableMsg" class="no-timetable">
+                    Configure your schedule above to generate a timetable.
+                </div>
+            </div>
+
+            <div class="sessions-list">
+                <h3>Your Sessions</h3>
+                <div id="sessionsList" class="sessions-container">
+                    <div class="empty-sessions">No sessions added yet. Add one to get started!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/timetable.js"></script>
+</body>
+</html>
