@@ -4,7 +4,7 @@ Assignment & Study Tracker is a lightweight frontend web app for managing assign
 The goal of this project is to make studying more organized, engaging, and visually clear using only frontend technologies.
 
 # 🔗 Live Demo:
-https://apoorva-iu.github.io/Study_tracker/
+studytracker-iu.netlify.app
 
 # Features
 
